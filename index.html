@@ -1,0 +1,2341 @@
+<!--
+=======================================================
+  BAYBUILT HOMEPAGE — PRODUCTION READY
+  bayvetted.com · the Bay Area, CA
+  Brand name: PLACEHOLDER — swap "BayVetted" for your final name when ready
+=======================================================
+
+  HOW TO GET THIS LIVE IN WEBFLOW (5 minutes):
+
+  OPTION A — Full standalone site (recommended):
+  1. Go to webflow.com → New Project → Blank Site
+  2. In the Designer, click Pages → Home
+  3. Add an "HTML Embed" element (from the Add panel, search "embed")
+  4. Paste EVERYTHING between the <body> tags into the embed
+  5. In Project Settings → Custom Code → Head, paste the
+     <link> font tags and <style> block from this file's <head>
+  6. Publish → connect your domain
+
+  OPTION B — Host this file directly (fastest):
+  1. Upload this file to any web host (Netlify, Vercel, etc.)
+  2. Drag & drop this .html file → instant live URL
+  3. Connect your custom domain in that host's dashboard
+
+  OPTION C — Use Netlify Drop (live in 30 seconds):
+  1. Go to app.netlify.com/drop
+  2. Drag this file onto the page
+  3. You get a live URL instantly — connect domain after
+
+  TO EDIT CONTENT: Search for any text in this file and
+  update it directly. All copy is plain HTML text.
+=======================================================
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BayVetted — Vetted Home Service Pros in the Bay Area</title>
+<meta name="description" content="BayVetted connects Bay Area homeowners with licensed, insured, and vetted contractors across the Bay Area. Max 3 quotes. Free to start.">
+<meta property="og:title" content="BayVetted — Bay Area vetted. Bay Area trusted.">
+<meta property="og:description" content="Vetted contractors in the Bay Area. Max 3 quotes. Free to start.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --midnight: #26215C;
+    --iris: #7F77DD;
+    --lavender: #EEEDFE;
+    --lavender-mid: #AFA9EC;
+    --amber: #EF9F27;
+    --amber-dark: #854F0B;
+    --stone: #F1EFE8;
+    --stone-mid: #D3D1C7;
+    --white: #FFFFFF;
+    --body-text: #3a3760;
+    --muted: #888780;
+    --serif: 'DM Serif Display', Georgia, serif;
+    --sans: 'DM Sans', sans-serif;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--sans);
+    background: var(--stone);
+    color: var(--midnight);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── NAV ─────────────────────────────────────── */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--stone);
+    border-bottom: 1px solid var(--stone-mid);
+    padding: 0 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+  }
+
+  .nav-logo {
+    font-family: var(--sans);
+    font-weight: 500;
+    font-size: 20px;
+    letter-spacing: -0.5px;
+    color: var(--midnight);
+    text-decoration: none;
+  }
+
+  .nav-logo span { color: var(--iris); }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--body-text);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--midnight); }
+
+  .nav-cta-secondary {
+    background: transparent;
+    color: var(--midnight) !important;
+    padding: 10px 22px;
+    border-radius: 6px;
+    font-weight: 500 !important;
+    font-size: 14px !important;
+    border: 1.5px solid var(--midnight);
+    transition: background 0.2s, color 0.2s !important;
+  }
+
+  .nav-cta-secondary:hover {
+    background: var(--midnight) !important;
+    color: var(--white) !important;
+  }
+
+  .nav-cta {
+    background: var(--midnight);
+    color: var(--white) !important;
+    padding: 10px 22px;
+    border-radius: 6px;
+    font-weight: 500 !important;
+    font-size: 14px !important;
+    transition: background 0.2s !important;
+  }
+
+  .nav-cta:hover { background: #3C3489 !important; }
+
+  /* ── HERO ────────────────────────────────────── */
+  .hero {
+    min-height: 92vh;
+    padding: 0 5%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 60px;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+
+  .hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--lavender);
+    color: var(--midnight);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 100px;
+    margin-bottom: 24px;
+  }
+
+  .hero-eyebrow-dot {
+    width: 6px;
+    height: 6px;
+    background: var(--iris);
+    border-radius: 50%;
+  }
+
+  .hero h1 {
+    font-family: var(--serif);
+    font-size: clamp(42px, 5vw, 68px);
+    line-height: 1.1;
+    color: var(--midnight);
+    margin-bottom: 24px;
+    letter-spacing: -0.5px;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: var(--iris);
+  }
+
+  .hero-sub {
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.7;
+    color: var(--body-text);
+    margin-bottom: 40px;
+    max-width: 480px;
+  }
+
+  .hero-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    background: var(--midnight);
+    color: var(--white);
+    font-family: var(--sans);
+    font-size: 15px;
+    font-weight: 500;
+    padding: 14px 28px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: background 0.2s, transform 0.15s;
+  }
+
+  .btn-primary:hover { background: #3C3489; transform: translateY(-1px); }
+
+  .btn-secondary {
+    color: var(--midnight);
+    font-family: var(--sans);
+    font-size: 15px;
+    font-weight: 400;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border-bottom: 1px solid var(--lavender-mid);
+    padding-bottom: 2px;
+    transition: border-color 0.2s;
+  }
+
+  .btn-secondary:hover { border-color: var(--iris); }
+
+  .hero-trust {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-top: 48px;
+    padding-top: 40px;
+    border-top: 1px solid var(--stone-mid);
+  }
+
+  .hero-trust-stat { text-align: center; }
+  .hero-trust-stat .num {
+    font-family: var(--serif);
+    font-size: 28px;
+    color: var(--midnight);
+    display: block;
+  }
+  .hero-trust-stat .lbl {
+    font-size: 12px;
+    color: var(--muted);
+    display: block;
+    margin-top: 2px;
+  }
+
+  .trust-divider {
+    width: 1px;
+    height: 40px;
+    background: var(--stone-mid);
+  }
+
+  /* Hero visual */
+  .hero-visual {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .hero-card-stack {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .contractor-card {
+    background: var(--white);
+    border-radius: 16px;
+    padding: 24px;
+    border: 1px solid var(--stone-mid);
+    position: relative;
+    z-index: 2;
+  }
+
+  .contractor-card-back {
+    position: absolute;
+    inset: 0;
+    background: var(--lavender);
+    border-radius: 16px;
+    transform: rotate(3deg) translateY(8px);
+    z-index: 1;
+  }
+
+  .card-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 16px;
+  }
+
+  .avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--midnight);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--lavender);
+    font-weight: 500;
+    font-size: 16px;
+    flex-shrink: 0;
+  }
+
+  .card-name { font-weight: 500; font-size: 15px; color: var(--midnight); }
+  .card-trade { font-size: 13px; color: var(--muted); margin-top: 2px; }
+
+  .card-badges {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    margin-bottom: 16px;
+  }
+
+  .badge {
+    font-size: 11px;
+    font-weight: 500;
+    padding: 4px 10px;
+    border-radius: 100px;
+  }
+
+  .badge-verified { background: var(--lavender); color: var(--midnight); }
+  .badge-insured { background: #EAF3DE; color: #3B6D11; }
+  .badge-elite { background: var(--amber); color: var(--amber-dark); }
+
+  .card-rating {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 14px;
+  }
+
+  .stars { color: var(--amber); font-size: 14px; letter-spacing: 1px; }
+  .rating-num { font-size: 13px; font-weight: 500; color: var(--midnight); }
+  .rating-count { font-size: 12px; color: var(--muted); }
+
+  .card-quote {
+    font-size: 13px;
+    color: var(--body-text);
+    line-height: 1.6;
+    padding: 12px 14px;
+    background: var(--stone);
+    border-radius: 8px;
+    border-left: 3px solid var(--iris);
+    margin-bottom: 16px;
+  }
+
+  .card-cta {
+    width: 100%;
+    background: var(--midnight);
+    color: var(--white);
+    border: none;
+    border-radius: 8px;
+    padding: 12px;
+    font-family: var(--sans);
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+
+  .card-cta:hover { background: #3C3489; }
+
+  .floating-badge {
+    position: absolute;
+    background: var(--white);
+    border: 1px solid var(--stone-mid);
+    border-radius: 12px;
+    padding: 10px 14px;
+    font-size: 12px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 4px 20px rgba(38,33,92,0.08);
+    z-index: 3;
+  }
+
+  .floating-badge-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+
+  .fb-top { top: -20px; right: -20px; color: var(--midnight); }
+  .fb-bottom { bottom: -16px; left: -20px; color: var(--midnight); }
+
+  /* ── HOW IT WORKS ────────────────────────────── */
+  .section-how {
+    background: var(--midnight);
+    padding: 100px 5%;
+  }
+
+  .section-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .section-label {
+    font-size: 11px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-bottom: 16px;
+  }
+
+  .section-label.light { color: var(--lavender-mid); }
+  .section-label.dark { color: var(--iris); }
+
+  .section-title {
+    font-family: var(--serif);
+    font-size: clamp(32px, 4vw, 52px);
+    line-height: 1.15;
+    margin-bottom: 60px;
+  }
+
+  .section-title.light { color: var(--white); }
+  .section-title.dark { color: var(--midnight); }
+
+  .steps-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 16px;
+    overflow: hidden;
+  }
+
+  .step {
+    background: rgba(255,255,255,0.04);
+    padding: 40px 32px;
+    position: relative;
+  }
+
+  .step-num {
+    font-family: var(--serif);
+    font-size: 52px;
+    color: rgba(175,169,236,0.25);
+    line-height: 1;
+    margin-bottom: 20px;
+    display: block;
+  }
+
+  .step-icon {
+    width: 40px;
+    height: 40px;
+    background: var(--iris);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+
+  .step-icon svg { width: 20px; height: 20px; stroke: white; fill: none; stroke-width: 1.5; }
+
+  .step h3 {
+    font-family: var(--sans);
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--white);
+    margin-bottom: 12px;
+  }
+
+  .step p {
+    font-size: 14px;
+    font-weight: 300;
+    color: rgba(238,237,254,0.7);
+    line-height: 1.7;
+  }
+
+  /* ── WHY GROUNDWORK ──────────────────────────── */
+  .section-why {
+    background: var(--stone);
+    padding: 100px 5%;
+  }
+
+  .why-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+  }
+
+  .why-left {}
+
+  .why-right {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .why-card {
+    background: var(--white);
+    border: 1px solid var(--stone-mid);
+    border-radius: 14px;
+    padding: 24px 22px;
+  }
+
+  .why-card-icon {
+    width: 36px;
+    height: 36px;
+    background: var(--lavender);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 14px;
+  }
+
+  .why-card-icon svg { width: 18px; height: 18px; stroke: var(--iris); fill: none; stroke-width: 1.5; }
+
+  .why-card h4 {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--midnight);
+    margin-bottom: 8px;
+  }
+
+  .why-card p {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.65;
+    font-weight: 300;
+  }
+
+  .why-card.accent {
+    background: var(--midnight);
+    border-color: var(--midnight);
+    grid-column: span 2;
+  }
+
+  .why-card.accent h4 { color: var(--white); }
+  .why-card.accent p { color: var(--lavender-mid); }
+  .why-card.accent .why-card-icon { background: rgba(127,119,221,0.2); }
+  .why-card.accent .why-card-icon svg { stroke: var(--lavender-mid); }
+
+  .why-pullquote {
+    font-family: var(--serif);
+    font-size: clamp(20px, 2.5vw, 28px);
+    color: var(--midnight);
+    line-height: 1.4;
+    margin: 32px 0;
+    padding-left: 20px;
+    border-left: 3px solid var(--iris);
+  }
+
+  .why-body {
+    font-size: 16px;
+    font-weight: 300;
+    color: var(--body-text);
+    line-height: 1.8;
+    margin-bottom: 32px;
+  }
+
+  /* ── TRADES ──────────────────────────────────── */
+  .section-trades {
+    background: var(--lavender);
+    padding: 100px 5%;
+  }
+
+  .trades-intro {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: end;
+    margin-bottom: 56px;
+  }
+
+  .trades-sub {
+    font-size: 16px;
+    font-weight: 300;
+    color: var(--body-text);
+    line-height: 1.7;
+    margin-top: 16px;
+  }
+
+  .trades-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+  }
+
+  .trade-tile {
+    background: var(--white);
+    border: 1px solid rgba(127,119,221,0.2);
+    border-radius: 14px;
+    padding: 28px 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: border-color 0.2s, transform 0.15s;
+  }
+
+  .trade-tile:hover {
+    border-color: var(--iris);
+    transform: translateY(-3px);
+  }
+
+  .trade-emoji { font-size: 28px; margin-bottom: 10px; display: block; }
+
+  .trade-name {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--midnight);
+    margin-bottom: 4px;
+  }
+
+  .trade-count {
+    font-size: 11px;
+    color: var(--muted);
+  }
+
+  /* ── TESTIMONIALS ────────────────────────────── */
+  .section-testimonials {
+    background: var(--white);
+    padding: 100px 5%;
+  }
+
+  .testi-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 60px;
+  }
+
+  .testi-card {
+    background: var(--stone);
+    border-radius: 16px;
+    padding: 32px 28px;
+  }
+
+  .testi-stars { color: var(--amber); font-size: 16px; letter-spacing: 2px; margin-bottom: 16px; }
+
+  .testi-quote {
+    font-family: var(--serif);
+    font-size: 17px;
+    line-height: 1.55;
+    color: var(--midnight);
+    margin-bottom: 24px;
+  }
+
+  .testi-author {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .testi-avatar {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: var(--midnight);
+    color: var(--lavender);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 500;
+    flex-shrink: 0;
+  }
+
+  .testi-name { font-size: 14px; font-weight: 500; color: var(--midnight); }
+  .testi-meta { font-size: 12px; color: var(--muted); margin-top: 2px; }
+
+  /* ── CONTRACTOR CTA ──────────────────────────── */
+  .section-contractor {
+    background: var(--midnight);
+    padding: 100px 5%;
+  }
+
+  .contractor-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .contractor-sub {
+    font-size: 16px;
+    font-weight: 300;
+    color: rgba(238,237,254,0.7);
+    line-height: 1.7;
+    margin: 20px 0 36px;
+  }
+
+  .contractor-stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .cstat {
+    background: rgba(255,255,255,0.06);
+    border-radius: 12px;
+    padding: 20px;
+  }
+
+  .cstat-num {
+    font-family: var(--serif);
+    font-size: 32px;
+    color: var(--white);
+    display: block;
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+
+  .cstat-lbl {
+    font-size: 12px;
+    color: var(--lavender-mid);
+    font-weight: 300;
+  }
+
+  .contractor-features {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .cfeat {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+  }
+
+  .cfeat-dot {
+    width: 8px;
+    height: 8px;
+    background: var(--iris);
+    border-radius: 50%;
+    margin-top: 7px;
+    flex-shrink: 0;
+  }
+
+  .cfeat h4 {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--white);
+    margin-bottom: 4px;
+  }
+
+  .cfeat p {
+    font-size: 13px;
+    font-weight: 300;
+    color: rgba(238,237,254,0.65);
+    line-height: 1.6;
+  }
+
+  /* ── FINAL CTA ───────────────────────────────── */
+  .section-final {
+    background: var(--stone);
+    padding: 120px 5%;
+    text-align: center;
+  }
+
+  .final-inner { max-width: 680px; margin: 0 auto; }
+
+  .final-inner h2 {
+    font-family: var(--serif);
+    font-size: clamp(36px, 5vw, 64px);
+    color: var(--midnight);
+    line-height: 1.1;
+    margin-bottom: 20px;
+  }
+
+  .final-inner p {
+    font-size: 17px;
+    font-weight: 300;
+    color: var(--body-text);
+    line-height: 1.7;
+    margin-bottom: 40px;
+  }
+
+  .final-actions {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .btn-outline {
+    background: transparent;
+    color: var(--midnight);
+    border: 1.5px solid var(--midnight);
+    font-family: var(--sans);
+    font-size: 15px;
+    font-weight: 500;
+    padding: 14px 28px;
+    border-radius: 8px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: background 0.2s, color 0.2s;
+  }
+
+  .btn-outline:hover { background: var(--midnight); color: var(--white); }
+
+  /* ── FOOTER ──────────────────────────────────── */
+  footer {
+    background: var(--midnight);
+    padding: 60px 5% 40px;
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 48px;
+  }
+
+  .footer-brand-name {
+    font-family: var(--sans);
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--white);
+    letter-spacing: -0.5px;
+    margin-bottom: 12px;
+  }
+
+  .footer-brand-name span { color: var(--iris); }
+
+  .footer-tagline {
+    font-size: 13px;
+    font-weight: 300;
+    color: var(--lavender-mid);
+    line-height: 1.6;
+    margin-bottom: 24px;
+  }
+
+  .footer-col h5 {
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--lavender-mid);
+    margin-bottom: 16px;
+  }
+
+  .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+
+  .footer-col ul a {
+    font-size: 13px;
+    font-weight: 300;
+    color: rgba(238,237,254,0.6);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .footer-col ul a:hover { color: var(--white); }
+
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 28px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .footer-bottom p {
+    font-size: 12px;
+    font-weight: 300;
+    color: rgba(238,237,254,0.4);
+  }
+
+  .footer-legal {
+    display: flex;
+    gap: 24px;
+  }
+
+  .footer-legal a {
+    font-size: 12px;
+    font-weight: 300;
+    color: rgba(238,237,254,0.4);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .footer-legal a:hover { color: rgba(238,237,254,0.8); }
+
+  /* ── ANIMATIONS ──────────────────────────────── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .fade-up { animation: fadeUp 0.7s ease forwards; }
+  .delay-1 { animation-delay: 0.1s; opacity: 0; }
+  .delay-2 { animation-delay: 0.2s; opacity: 0; }
+  .delay-3 { animation-delay: 0.35s; opacity: 0; }
+  .delay-4 { animation-delay: 0.5s; opacity: 0; }
+
+  @media (max-width: 900px) {
+    .hero, .why-grid, .contractor-split, .footer-grid { grid-template-columns: 1fr; }
+    .steps-grid, .trades-grid, .testi-grid { grid-template-columns: 1fr 1fr; }
+    .hero-visual { display: none; }
+    .trades-intro { grid-template-columns: 1fr; gap: 20px; }
+  }
+
+  @media (max-width: 600px) {
+    .steps-grid, .trades-grid, .testi-grid { grid-template-columns: 1fr; }
+    .why-right { grid-template-columns: 1fr; }
+    .why-card.accent { grid-column: span 1; }
+  }
+
+  /* ── CONTRACTOR INTAKE FORM ──────────────────── */
+  .section-contractor-form {
+    background: var(--lavender);
+    padding: 100px 5%;
+  }
+
+  .cform-inner {
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  .cform-header {
+    text-align: center;
+    margin-bottom: 56px;
+  }
+
+  .cform-header h2 {
+    font-family: var(--serif);
+    font-size: clamp(32px, 4vw, 48px);
+    color: var(--midnight);
+    line-height: 1.15;
+    margin-bottom: 14px;
+  }
+
+  .cform-header p {
+    font-size: 16px;
+    font-weight: 300;
+    color: var(--body-text);
+    line-height: 1.7;
+    max-width: 520px;
+    margin: 0 auto;
+  }
+
+  .cform-card {
+    background: var(--white);
+    border: 1px solid var(--stone-mid);
+    border-radius: 20px;
+    padding: 48px;
+    box-shadow: 0 4px 32px rgba(38,33,92,0.06);
+  }
+
+  .cform-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 20px;
+  }
+
+  .cform-field {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+  }
+
+  .cform-field.full { grid-column: span 2; }
+
+  .cform-label {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--midnight);
+    letter-spacing: 0.2px;
+  }
+
+  .cform-label span {
+    color: var(--iris);
+    margin-left: 2px;
+  }
+
+  .cform-input {
+    font-family: var(--sans);
+    font-size: 14px;
+    font-weight: 300;
+    color: var(--midnight);
+    background: var(--stone);
+    border: 1.5px solid var(--stone-mid);
+    border-radius: 9px;
+    padding: 12px 16px;
+    outline: none;
+    transition: border-color 0.2s, background 0.2s;
+    width: 100%;
+  }
+
+  .cform-input:focus {
+    border-color: var(--iris);
+    background: var(--white);
+  }
+
+  .cform-input::placeholder { color: var(--muted); }
+
+  .cform-select {
+    font-family: var(--sans);
+    font-size: 14px;
+    font-weight: 300;
+    color: var(--midnight);
+    background: var(--stone);
+    border: 1.5px solid var(--stone-mid);
+    border-radius: 9px;
+    padding: 12px 16px;
+    outline: none;
+    transition: border-color 0.2s;
+    width: 100%;
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23888780' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+  }
+
+  .cform-select:focus { border-color: var(--iris); }
+
+  .cform-trades {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-top: 4px;
+  }
+
+  .cform-trade-check {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    padding: 10px 14px;
+    border: 1.5px solid var(--stone-mid);
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 13px;
+    color: var(--body-text);
+    transition: border-color 0.15s, background 0.15s;
+    user-select: none;
+  }
+
+  .cform-trade-check:hover { border-color: var(--iris); background: var(--lavender); }
+
+  .cform-trade-check input[type="checkbox"] {
+    width: 16px; height: 16px;
+    accent-color: var(--iris);
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+
+  .cform-divider {
+    border: none;
+    border-top: 1px solid var(--stone-mid);
+    margin: 32px 0;
+  }
+
+  .cform-section-title {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--midnight);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+  }
+
+  .cform-agreement {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    padding: 16px;
+    background: var(--lavender);
+    border-radius: 10px;
+    margin-bottom: 24px;
+    font-size: 13px;
+    color: var(--body-text);
+    line-height: 1.6;
+  }
+
+  .cform-agreement input[type="checkbox"] {
+    width: 18px; height: 18px;
+    accent-color: var(--iris);
+    cursor: pointer;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .cform-submit {
+    width: 100%;
+    background: var(--midnight);
+    color: var(--white);
+    font-family: var(--sans);
+    font-size: 16px;
+    font-weight: 500;
+    padding: 16px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.15s;
+    letter-spacing: 0.3px;
+  }
+
+  .cform-submit:hover { background: #3C3489; transform: translateY(-1px); }
+
+  .cform-success {
+    display: none;
+    text-align: center;
+    padding: 48px 24px;
+  }
+
+  .cform-success-icon {
+    width: 64px; height: 64px;
+    background: var(--green-light, #E1F5EE);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 20px;
+  }
+
+  .cform-success h3 {
+    font-family: var(--serif);
+    font-size: 28px;
+    color: var(--midnight);
+    margin-bottom: 12px;
+  }
+
+  .cform-success p {
+    font-size: 15px;
+    font-weight: 300;
+    color: var(--body-text);
+    line-height: 1.7;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .cform-note {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 20px;
+    font-size: 12px;
+    color: var(--muted);
+    justify-content: center;
+  }
+
+  .cform-note svg { flex-shrink: 0; }
+
+  @media (max-width: 700px) {
+    .cform-card { padding: 28px 20px; }
+    .cform-grid { grid-template-columns: 1fr; }
+    .cform-field.full { grid-column: span 1; }
+    .cform-trades { grid-template-columns: 1fr 1fr; }
+  }
+
+  @media (max-width: 480px) {
+    .cform-trades { grid-template-columns: 1fr; }
+  }
+
+  /* ── HOMEOWNER INTAKE FORM ───────────────────── */
+  .section-homeowner-form {
+    background: var(--white);
+    padding: 100px 5%;
+  }
+
+  .hform-inner {
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  .hform-header {
+    text-align: center;
+    margin-bottom: 56px;
+  }
+
+  .hform-header h2 {
+    font-family: var(--serif);
+    font-size: clamp(32px, 4vw, 48px);
+    color: var(--midnight);
+    line-height: 1.15;
+    margin-bottom: 14px;
+  }
+
+  .hform-header p {
+    font-size: 16px;
+    font-weight: 300;
+    color: var(--body-text);
+    line-height: 1.7;
+    max-width: 520px;
+    margin: 0 auto;
+  }
+
+  .hform-card {
+    background: var(--stone);
+    border: 1px solid var(--stone-mid);
+    border-radius: 20px;
+    padding: 48px;
+    box-shadow: 0 4px 32px rgba(38,33,92,0.06);
+  }
+
+  .hform-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 20px;
+  }
+
+  .hform-field {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+  }
+
+  .hform-field.full { grid-column: span 2; }
+
+  .hform-label {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--midnight);
+  }
+
+  .hform-label span { color: var(--iris); margin-left: 2px; }
+
+  .hform-input {
+    font-family: var(--sans);
+    font-size: 14px;
+    font-weight: 300;
+    color: var(--midnight);
+    background: var(--white);
+    border: 1.5px solid var(--stone-mid);
+    border-radius: 9px;
+    padding: 12px 16px;
+    outline: none;
+    transition: border-color 0.2s;
+    width: 100%;
+  }
+
+  .hform-input:focus { border-color: var(--iris); }
+  .hform-input::placeholder { color: var(--muted); }
+
+  .hform-select {
+    font-family: var(--sans);
+    font-size: 14px;
+    font-weight: 300;
+    color: var(--midnight);
+    background: var(--white);
+    border: 1.5px solid var(--stone-mid);
+    border-radius: 9px;
+    padding: 12px 16px;
+    outline: none;
+    transition: border-color 0.2s;
+    width: 100%;
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23888780' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+  }
+
+  .hform-select:focus { border-color: var(--iris); }
+
+  .hform-divider {
+    border: none;
+    border-top: 1px solid var(--stone-mid);
+    margin: 28px 0;
+  }
+
+  .hform-section-title {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--midnight);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+  }
+
+  .hform-submit {
+    width: 100%;
+    background: var(--midnight);
+    color: var(--white);
+    font-family: var(--sans);
+    font-size: 16px;
+    font-weight: 500;
+    padding: 16px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.15s;
+  }
+
+  .hform-submit:hover { background: #3C3489; transform: translateY(-1px); }
+
+  .hform-privacy {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 16px;
+    font-size: 12px;
+    color: var(--muted);
+    justify-content: center;
+  }
+
+  .hform-success {
+    display: none;
+    text-align: center;
+    padding: 48px 24px;
+  }
+
+  .hform-success-icon {
+    width: 64px; height: 64px;
+    background: #E1F5EE;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 20px;
+  }
+
+  .hform-success h3 {
+    font-family: var(--serif);
+    font-size: 28px;
+    color: var(--midnight);
+    margin-bottom: 12px;
+  }
+
+  .hform-success p {
+    font-size: 15px;
+    font-weight: 300;
+    color: var(--body-text);
+    line-height: 1.7;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .hform-success-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    max-width: 400px;
+    margin: 24px auto 0;
+  }
+
+  .hform-stat {
+    background: var(--stone);
+    border-radius: 10px;
+    padding: 14px;
+    text-align: center;
+  }
+
+  .hform-stat-num {
+    font-family: var(--serif);
+    font-size: 22px;
+    color: var(--midnight);
+    display: block;
+  }
+
+  .hform-stat-lbl {
+    font-size: 11px;
+    color: var(--muted);
+    margin-top: 2px;
+    display: block;
+  }
+
+  @media (max-width: 700px) {
+    .hform-card { padding: 28px 20px; }
+    .hform-grid { grid-template-columns: 1fr; }
+    .hform-field.full { grid-column: span 1; }
+    .hform-success-stats { grid-template-columns: 1fr; }
+  }
+
+  /* ── MOBILE NAV ──────────────────────────────── */
+  .nav-hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 4px;
+    background: none;
+    border: none;
+  }
+
+  .nav-hamburger span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: var(--midnight);
+    border-radius: 2px;
+    transition: all 0.3s;
+  }
+
+  .nav-hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+  .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+  .nav-hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+  .nav-mobile-menu {
+    display: none;
+    position: fixed;
+    top: 64px;
+    left: 0; right: 0;
+    background: var(--stone);
+    border-bottom: 1px solid var(--stone-mid);
+    padding: 20px 5% 28px;
+    z-index: 99;
+    flex-direction: column;
+    gap: 4px;
+    box-shadow: 0 8px 32px rgba(38,33,92,0.1);
+  }
+
+  .nav-mobile-menu.open { display: flex; }
+
+  .nav-mobile-link {
+    font-family: var(--sans);
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--body-text);
+    text-decoration: none;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--stone-mid);
+    display: block;
+    transition: color 0.15s;
+  }
+
+  .nav-mobile-link:last-of-type { border-bottom: none; }
+  .nav-mobile-link:hover { color: var(--midnight); }
+
+  .nav-mobile-btns {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 16px;
+  }
+
+  .nav-mobile-btn-primary {
+    display: block;
+    text-align: center;
+    background: var(--midnight);
+    color: var(--white);
+    font-family: var(--sans);
+    font-size: 15px;
+    font-weight: 500;
+    padding: 14px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+
+  .nav-mobile-btn-primary:hover { background: #3C3489; }
+
+  .nav-mobile-btn-secondary {
+    display: block;
+    text-align: center;
+    background: transparent;
+    color: var(--midnight);
+    font-family: var(--sans);
+    font-size: 15px;
+    font-weight: 500;
+    padding: 13px;
+    border-radius: 8px;
+    border: 1.5px solid var(--midnight);
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s;
+  }
+
+  .nav-mobile-btn-secondary:hover { background: var(--midnight); color: var(--white); }
+
+  /* ── MOBILE BREAKPOINTS ──────────────────────── */
+  @media (max-width: 768px) {
+
+    /* Nav */
+    nav { padding: 0 5%; }
+    .nav-links { display: none; }
+    .nav-hamburger { display: flex; }
+
+    /* Hero */
+    .hero {
+      grid-template-columns: 1fr;
+      padding-top: 48px;
+      padding-bottom: 56px;
+      gap: 0;
+    }
+
+    .hero h1 { font-size: 36px; margin-bottom: 16px; }
+    .hero-sub { font-size: 16px; margin-bottom: 28px; }
+    .hero-visual { display: none; }
+
+    .hero-actions { flex-direction: column; align-items: stretch; }
+    .btn-primary { text-align: center; }
+    .btn-secondary { justify-content: center; }
+
+    .hero-trust {
+      flex-wrap: wrap;
+      gap: 16px;
+      padding-top: 28px;
+      margin-top: 28px;
+      justify-content: center;
+    }
+
+    .trust-divider { display: none; }
+    .hero-trust-stat .num { font-size: 22px; }
+
+    /* Sections */
+    .section-how,
+    .section-why,
+    .section-trades,
+    .section-testimonials,
+    .section-contractor,
+    .section-final,
+    .section-homeowner-form,
+    .section-contractor-form { padding: 64px 5%; }
+
+    /* How it works */
+    .steps-grid { grid-template-columns: 1fr; gap: 2px; border-radius: 12px; }
+    .step { padding: 28px 24px; }
+    .step-num { font-size: 40px; margin-bottom: 12px; }
+
+    /* Section titles */
+    .section-title { font-size: 30px; margin-bottom: 32px; }
+
+    /* Why grid */
+    .why-grid { grid-template-columns: 1fr; gap: 36px; }
+    .why-right { grid-template-columns: 1fr; }
+    .why-card.accent { grid-column: span 1; }
+    .why-pullquote { font-size: 18px; }
+    .why-body { font-size: 15px; }
+
+    /* Trades */
+    .trades-intro { grid-template-columns: 1fr; gap: 12px; }
+    .trades-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+    .trade-tile { padding: 20px 14px; }
+    .trade-emoji { font-size: 24px; }
+    .trade-name { font-size: 13px; }
+    .trade-count { font-size: 10px; }
+
+    /* Testimonials */
+    .testi-grid { grid-template-columns: 1fr; gap: 14px; }
+    .testi-card { padding: 24px 20px; }
+    .testi-quote { font-size: 16px; }
+
+    /* Contractor split */
+    .contractor-split { grid-template-columns: 1fr; gap: 40px; }
+    .contractor-stats { grid-template-columns: 1fr 1fr; }
+    .cstat-num { font-size: 26px; }
+
+    /* Final CTA */
+    .section-final { padding: 72px 5%; }
+    .final-inner h2 { font-size: 32px; }
+    .final-inner p { font-size: 15px; }
+    .final-actions { flex-direction: column; align-items: stretch; }
+    .btn-outline { text-align: center; }
+
+    /* Forms */
+    .hform-card,
+    .cform-card { padding: 28px 18px; }
+
+    .hform-grid,
+    .cform-grid { grid-template-columns: 1fr; }
+
+    .hform-field.full,
+    .cform-field.full { grid-column: span 1; }
+
+    .cform-trades { grid-template-columns: 1fr 1fr; }
+
+    .hform-success-stats { grid-template-columns: 1fr 1fr; }
+
+    .hform-header h2,
+    .cform-header h2 { font-size: 28px; }
+
+    /* Footer */
+    .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+    .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+    .footer-legal { justify-content: center; }
+  }
+
+  @media (max-width: 420px) {
+    .hero h1 { font-size: 30px; }
+    .trades-grid { grid-template-columns: 1fr; }
+    .cform-trades { grid-template-columns: 1fr; }
+    .contractor-stats { grid-template-columns: 1fr; }
+    .hform-success-stats { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr; }
+    .nav-logo { font-size: 18px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ── NAV ─────────────────────────────────────── -->
+<nav>
+  <a href="#" class="nav-logo">Bay<span>Vetted</span></a>
+  <ul class="nav-links">
+    <li><a href="#how">How it works</a></li>
+    <li><a href="#trades">Trades</a></li>
+    <li><a href="#contractors">For contractors</a></li>
+    <li><a href="#apply" class="nav-cta-secondary">Apply as a pro</a></li>
+    <li><a href="#get-quote" class="nav-cta">Find a pro</a></li>
+  </ul>
+  <button class="nav-hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- Mobile menu -->
+<div class="nav-mobile-menu" id="mobile-menu">
+  <a class="nav-mobile-link" href="#how" onclick="closeMenu()">How it works</a>
+  <a class="nav-mobile-link" href="#trades" onclick="closeMenu()">Trades</a>
+  <a class="nav-mobile-link" href="#contractors" onclick="closeMenu()">For contractors</a>
+  <div class="nav-mobile-btns">
+    <a class="nav-mobile-btn-primary" href="#get-quote" onclick="closeMenu()">Find a pro</a>
+    <a class="nav-mobile-btn-secondary" href="#apply" onclick="closeMenu()">Apply as a pro</a>
+  </div>
+</div>
+
+<script>
+  function toggleMenu() {
+    const menu = document.getElementById('mobile-menu');
+    const btn = document.getElementById('hamburger');
+    menu.classList.toggle('open');
+    btn.classList.toggle('open');
+    document.body.style.overflow = menu.classList.contains('open') ? 'hidden' : '';
+  }
+  function closeMenu() {
+    document.getElementById('mobile-menu').classList.remove('open');
+    document.getElementById('hamburger').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  // Close menu on outside click
+  document.addEventListener('click', function(e) {
+    const menu = document.getElementById('mobile-menu');
+    const btn = document.getElementById('hamburger');
+    if (menu.classList.contains('open') && !menu.contains(e.target) && !btn.contains(e.target)) {
+      closeMenu();
+    }
+  });
+</script>
+
+<!-- ── HERO ────────────────────────────────────── -->
+<section style="background: var(--stone); padding: 0 5%;">
+  <div class="hero">
+    <div>
+      <div class="hero-eyebrow fade-up">
+        <span class="hero-eyebrow-dot"></span>
+        Every contractor is vetted, licensed &amp; insured
+      </div>
+      <h1 class="fade-up delay-1">Built on<br><em>quality.</em><br>Built on trust.</h1>
+      <p class="hero-sub fade-up delay-2">Every contractor on BayVetted is licensed, insured, and background-checked. Bay Area homeowners finally have a platform they can trust.</p>
+      <div class="hero-actions fade-up delay-3">
+        <a href="#get-quote" class="btn-primary">Get a free quote</a>
+        <a href="#how" class="btn-secondary">See how it works →</a>
+      </div>
+      <div class="hero-trust fade-up delay-4">
+        <div class="hero-trust-stat">
+          <span class="num">1,200+</span>
+          <span class="lbl">Vetted professionals</span>
+        </div>
+        <div class="trust-divider"></div>
+        <div class="hero-trust-stat">
+          <span class="num">98%</span>
+          <span class="lbl">Job satisfaction rate</span>
+        </div>
+        <div class="trust-divider"></div>
+        <div class="hero-trust-stat">
+          <span class="num">48 hr</span>
+          <span class="lbl">Average first response</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="hero-card-stack">
+        <div class="contractor-card-back"></div>
+        <div class="contractor-card">
+          <div class="card-header">
+            <div class="avatar">MR</div>
+            <div>
+              <div class="card-name">Marcus Rivera</div>
+              <div class="card-trade">General Contractor · Oakland, CA</div>
+            </div>
+          </div>
+          <div class="card-badges">
+            <span class="badge badge-verified">✓ Verified</span>
+            <span class="badge badge-insured">Insured</span>
+            <span class="badge badge-elite">★ Elite Pro</span>
+          </div>
+          <div class="card-rating">
+            <span class="stars">★★★★★</span>
+            <span class="rating-num">4.97</span>
+            <span class="rating-count">(134 reviews)</span>
+          </div>
+          <div class="card-quote">
+            "Marcus completed our kitchen remodel two days early and under budget. The craftsmanship is outstanding."
+          </div>
+          <button class="card-cta">Request a quote</button>
+        </div>
+
+        <div class="floating-badge fb-top">
+          <span class="floating-badge-dot" style="background:#22c55e;"></span>
+          Background checked
+        </div>
+        <div class="floating-badge fb-bottom">
+          <span class="floating-badge-dot" style="background: var(--amber);"></span>
+          License verified · CA #847291
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── HOW IT WORKS ────────────────────────────── -->
+<section class="section-how" id="how">
+  <div class="section-inner">
+    <p class="section-label light">How it works</p>
+    <h2 class="section-title light">Three steps to a job<br><em style="font-style:italic; color: var(--lavender-mid);">done right</em></h2>
+
+    <div class="steps-grid">
+      <div class="step">
+        <span class="step-num">01</span>
+        <div class="step-icon">
+          <svg viewBox="0 0 24 24"><path d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg>
+        </div>
+        <h3>Describe your project</h3>
+        <p>Tell us what you need — trade, scope, timeline, and rough budget. Takes about two minutes. No account required to start.</p>
+      </div>
+      <div class="step">
+        <span class="step-num">02</span>
+        <div class="step-icon">
+          <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
+        </div>
+        <h3>We match you with vetted pros</h3>
+        <p>We send your project to 2–3 pre-screened contractors who are licensed, insured, and rated for your specific trade. No spam, no auction.</p>
+      </div>
+      <div class="step">
+        <span class="step-num">03</span>
+        <div class="step-icon">
+          <svg viewBox="0 0 24 24"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+        </div>
+        <h3>Hire and get it done</h3>
+        <p>Review quotes, read real verified reviews, and book directly. After the job, leave a review to help the next homeowner.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── WHY GROUNDWORK ──────────────────────────── -->
+<section class="section-why" id="why">
+  <div class="section-inner">
+    <div class="why-grid">
+      <div class="why-left">
+        <p class="section-label dark">Why BayVetted</p>
+        <h2 class="section-title dark" style="margin-bottom: 0;">The platform that actually respects your home.</h2>
+        <p class="why-pullquote">We built BayVetted because Bay Area homeowners deserve better — and great Bay Area contractors deserve leads that actually convert.</p>
+        <p class="why-body">Every contractor on BayVetted has been personally vetted. That means license verification, active insurance on file, background check cleared, and real reviews tied to completed jobs — not profiles that anyone can fake.</p>
+        <a href="#" class="btn-primary">See our vetting process</a>
+      </div>
+
+      <div class="why-right">
+        <div class="why-card">
+          <div class="why-card-icon">
+            <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+          </div>
+          <h4>License &amp; insurance verified</h4>
+          <p>We check state license boards and hold active certificates of insurance. Expired = removed.</p>
+        </div>
+
+        <div class="why-card">
+          <div class="why-card-icon">
+            <svg viewBox="0 0 24 24"><path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          </div>
+          <h4>Background checked</h4>
+          <p>Every contractor has passed a full criminal background check before they appear on our platform.</p>
+        </div>
+
+        <div class="why-card">
+          <div class="why-card-icon">
+            <svg viewBox="0 0 24 24"><path d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/></svg>
+          </div>
+          <h4>Reviews you can trust</h4>
+          <p>Reviews are unlocked only after job completion is confirmed. No fake testimonials, ever.</p>
+        </div>
+
+        <div class="why-card accent">
+          <div class="why-card-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <h4>Max 3 quotes per job</h4>
+          <p>We send your project to at most 3 contractors — not 12. You get real attention, not a bidding frenzy where everyone races to the bottom.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── TRADES ──────────────────────────────────── -->
+<section class="section-trades" id="trades">
+  <div class="section-inner">
+    <div class="trades-intro">
+      <div>
+        <p class="section-label dark">Popular trades</p>
+        <h2 class="section-title dark" style="margin-bottom: 0;">Whatever the job, we have the right pro.</h2>
+      </div>
+      <p class="trades-sub">From routine maintenance to full renovations, BayVetted covers the trades homeowners rely on most — all with the same vetting standard.</p>
+    </div>
+
+    <div class="trades-grid">
+      <div class="trade-tile">
+        <span class="trade-emoji">🔧</span>
+        <div class="trade-name">Plumbing</div>
+        <div class="trade-count">186 pros available</div>
+      </div>
+      <div class="trade-tile">
+        <span class="trade-emoji">⚡</span>
+        <div class="trade-name">Electrical</div>
+        <div class="trade-count">162 pros available</div>
+      </div>
+      <div class="trade-tile">
+        <span class="trade-emoji">❄️</span>
+        <div class="trade-name">HVAC</div>
+        <div class="trade-count">194 pros available</div>
+      </div>
+      <div class="trade-tile">
+        <span class="trade-emoji">🏠</span>
+        <div class="trade-name">Roofing</div>
+        <div class="trade-count">98 pros available</div>
+      </div>
+      <div class="trade-tile">
+        <span class="trade-emoji">🪟</span>
+        <div class="trade-name">Windows &amp; Doors</div>
+        <div class="trade-count">84 pros available</div>
+      </div>
+      <div class="trade-tile">
+        <span class="trade-emoji">🪣</span>
+        <div class="trade-name">Painting</div>
+        <div class="trade-count">134 pros available</div>
+      </div>
+      <div class="trade-tile">
+        <span class="trade-emoji">🌿</span>
+        <div class="trade-name">Landscaping</div>
+        <div class="trade-count">112 pros available</div>
+      </div>
+      <div class="trade-tile">
+        <span class="trade-emoji">🪵</span>
+        <div class="trade-name">Carpentry</div>
+        <div class="trade-count">94 pros available</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── TESTIMONIALS ────────────────────────────── -->
+<section class="section-testimonials">
+  <div class="section-inner">
+    <p class="section-label dark">What homeowners say</p>
+    <h2 class="section-title dark">Real reviews from<br>real projects.</h2>
+
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-quote">"I've used Angi, Thumbtack, all of them. BayVetted is genuinely different. Two quotes, both solid, contractor showed up on time. That's never happened before."</p>
+        <div class="testi-author">
+          <div class="testi-avatar">SL</div>
+          <div>
+            <div class="testi-name">Sarah L.</div>
+            <div class="testi-meta">Kitchen remodel · San Jose, CA</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-quote">"The vetting process actually matters here. My HVAC tech was licensed, on time, and explained everything. I felt like a real customer, not just a lead."</p>
+        <div class="testi-author">
+          <div class="testi-avatar">DM</div>
+          <div>
+            <div class="testi-name">David M.</div>
+            <div class="testi-meta">AC replacement · Oakland, CA</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-quote">"Got three calls within 24 hours, all professional, all had my project details. Hired one the same day. The whole thing took 20 minutes of my time."</p>
+        <div class="testi-author">
+          <div class="testi-avatar">JP</div>
+          <div>
+            <div class="testi-name">Jessica P.</div>
+            <div class="testi-meta">Bathroom tile · Walnut Creek, CA</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CONTRACTOR CTA ──────────────────────────── -->
+<section class="section-contractor" id="contractors">
+  <div class="section-inner">
+    <div class="contractor-split">
+      <div>
+        <p class="section-label light">For contractors</p>
+        <h2 class="section-title light">Leads that<br><em style="font-style:italic; color:var(--lavender-mid);">actually convert.</em></h2>
+        <p class="contractor-sub">We're not here to sell you garbage leads from homeowners who are just browsing. BayVetted sends you real projects from verified homeowners who are ready to hire — and we send each lead to a maximum of three contractors.</p>
+        <a href="#apply" class="btn-primary" style="background: var(--iris);">Apply to join as a pro</a>
+      </div>
+
+      <div>
+        <div class="contractor-stats" style="margin-bottom: 32px;">
+          <div class="cstat">
+            <span class="cstat-num">3×</span>
+            <span class="cstat-lbl">Higher close rate vs. other platforms</span>
+          </div>
+          <div class="cstat">
+            <span class="cstat-num">$0</span>
+            <span class="cstat-lbl">Cost to apply and get vetted</span>
+          </div>
+          <div class="cstat">
+            <span class="cstat-num">48h</span>
+            <span class="cstat-lbl">Average time from lead to quote</span>
+          </div>
+          <div class="cstat">
+            <span class="cstat-num">4.8★</span>
+            <span class="cstat-lbl">Average contractor rating on BayVetted</span>
+          </div>
+        </div>
+
+        <div class="contractor-features">
+          <div class="cfeat">
+            <div class="cfeat-dot"></div>
+            <div>
+              <h4>You control your lead flow</h4>
+              <p>Pause at any time. Set your service area, trade types, and max jobs per month. No auto-billing surprises.</p>
+            </div>
+          </div>
+          <div class="cfeat">
+            <div class="cfeat-dot"></div>
+            <div>
+              <h4>Dashboard built for your business</h4>
+              <p>Track lead ROI, see your response rate, and get tips on winning more jobs — all in one clean view.</p>
+            </div>
+          </div>
+          <div class="cfeat">
+            <div class="cfeat-dot"></div>
+            <div>
+              <h4>Real support, real people</h4>
+              <p>Got a question? You can reach a human. We're not a ticket queue — we're your business partner.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- ── HOMEOWNER INTAKE FORM ─────────────────────── -->
+<section class="section-homeowner-form" id="get-quote">
+  <div class="hform-inner">
+
+    <div class="hform-header">
+      <p class="section-label dark">Get matched today</p>
+      <h2>Tell us about your project.<br>We'll find the right pro.</h2>
+      <p>Free to submit. Max 3 contractors will reach out — no spam, no auction, no pressure.</p>
+    </div>
+
+    <div class="hform-card" id="hform-card">
+      <div id="hform-fields">
+
+        <!-- Project details -->
+        <div class="hform-section-title">Your project</div>
+        <div class="hform-grid">
+          <div class="hform-field full">
+            <label class="hform-label" for="hf-trade">What kind of work do you need? <span>*</span></label>
+            <select class="hform-select" id="hf-trade">
+              <option value="" disabled selected>Select a trade</option>
+              <option>Plumbing</option>
+              <option>Electrical</option>
+              <option>HVAC / Heating & Cooling</option>
+              <option>Roofing</option>
+              <option>Painting</option>
+              <option>Carpentry / Woodwork</option>
+              <option>Landscaping</option>
+              <option>Windows & Doors</option>
+              <option>General Contracting / Remodel</option>
+              <option>Foundation / Structural</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="hform-field full">
+            <label class="hform-label" for="hf-desc">Describe your project <span>*</span></label>
+            <textarea class="hform-input" id="hf-desc" rows="3" placeholder="e.g. Kitchen faucet keeps dripping and getting worse. Need someone within the week."></textarea>
+          </div>
+          <div class="hform-field">
+            <label class="hform-label" for="hf-budget">Rough budget <span>*</span></label>
+            <select class="hform-select" id="hf-budget">
+              <option value="" disabled selected>Select a range</option>
+              <option>Under $500</option>
+              <option>$500 – $2,000</option>
+              <option>$2,000 – $10,000</option>
+              <option>$10,000 – $50,000</option>
+              <option>$50,000+</option>
+              <option>I need a quote first</option>
+            </select>
+          </div>
+          <div class="hform-field">
+            <label class="hform-label" for="hf-timeline">When do you need it done? <span>*</span></label>
+            <select class="hform-select" id="hf-timeline">
+              <option value="" disabled selected>Select timeline</option>
+              <option>Emergency — as soon as possible</option>
+              <option>Within 1 week</option>
+              <option>Within 1 month</option>
+              <option>1–3 months</option>
+              <option>Just planning ahead</option>
+            </select>
+          </div>
+        </div>
+
+        <hr class="hform-divider">
+
+        <!-- Property details -->
+        <div class="hform-section-title">Your property</div>
+        <div class="hform-grid">
+          <div class="hform-field">
+            <label class="hform-label" for="hf-zip">Zip code <span>*</span></label>
+            <input class="hform-input" id="hf-zip" type="text" placeholder="e.g. 94102" maxlength="5">
+          </div>
+          <div class="hform-field">
+            <label class="hform-label" for="hf-owner">Do you own this property? <span>*</span></label>
+            <select class="hform-select" id="hf-owner">
+              <option value="" disabled selected>Select one</option>
+              <option>Yes, I own it</option>
+              <option>No, I'm a property manager</option>
+              <option>No, I'm a tenant (I have permission)</option>
+            </select>
+          </div>
+        </div>
+
+        <hr class="hform-divider">
+
+        <!-- Contact -->
+        <div class="hform-section-title">Your contact details</div>
+        <div class="hform-grid">
+          <div class="hform-field">
+            <label class="hform-label" for="hf-name">Your name <span>*</span></label>
+            <input class="hform-input" id="hf-name" type="text" placeholder="First name is fine">
+          </div>
+          <div class="hform-field">
+            <label class="hform-label" for="hf-phone">Phone number <span>*</span></label>
+            <input class="hform-input" id="hf-phone" type="tel" placeholder="415-555-0147">
+          </div>
+          <div class="hform-field full">
+            <label class="hform-label" for="hf-email">Email address <span>*</span></label>
+            <input class="hform-input" id="hf-email" type="email" placeholder="you@email.com">
+          </div>
+        </div>
+
+        <button class="hform-submit" onclick="submitHForm()">Get matched with pros — free</button>
+
+        <div class="hform-privacy">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          Your info is only shared with the contractors we match you with — never sold, never spammed.
+        </div>
+
+      </div>
+
+      <!-- Success state -->
+      <div class="hform-success" id="hform-success">
+        <div class="hform-success-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1D9E75" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <h3>We're on it.</h3>
+        <p>Your project has been received. We're matching you with up to 3 vetted contractors in your area. Expect to hear from them within 24 hours.</p>
+        <div class="hform-success-stats">
+          <div class="hform-stat"><span class="hform-stat-num">3</span><span class="hform-stat-lbl">Max contractors</span></div>
+          <div class="hform-stat"><span class="hform-stat-num">24h</span><span class="hform-stat-lbl">First response</span></div>
+          <div class="hform-stat"><span class="hform-stat-num">100%</span><span class="hform-stat-lbl">Vetted pros</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<script>
+function submitHForm() {
+  const required = ['hf-trade','hf-desc','hf-budget','hf-timeline','hf-zip','hf-owner','hf-name','hf-phone','hf-email'];
+  let missing = false;
+
+  required.forEach(id => {
+    const el = document.getElementById(id);
+    if (!el || !el.value.trim()) {
+      el.style.borderColor = '#D85A30';
+      missing = true;
+    } else {
+      el.style.borderColor = '';
+    }
+  });
+
+  if (missing) {
+    const firstError = document.querySelector('#hform-fields .hform-input[style*="D85A30"], #hform-fields .hform-select[style*="D85A30"]');
+    if (firstError) firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    return;
+  }
+
+  document.getElementById('hform-fields').style.display = 'none';
+  document.getElementById('hform-success').style.display = 'block';
+  document.getElementById('hform-success').scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+</script>
+
+<!-- ── CONTRACTOR INTAKE FORM ──────────────────── -->
+<section class="section-contractor-form" id="apply">
+  <div class="cform-inner">
+
+    <div class="cform-header">
+      <p class="section-label dark">Apply to join</p>
+      <h2>Ready to grow your business<br>with BayVetted?</h2>
+      <p>Takes about 5 minutes. We review every application personally and follow up within 2 business days.</p>
+    </div>
+
+    <div class="cform-card" id="cform-card">
+
+      <div id="cform-fields">
+
+        <!-- Personal info -->
+        <div class="cform-section-title">Your details</div>
+        <div class="cform-grid">
+          <div class="cform-field">
+            <label class="cform-label" for="cf-fname">First name <span>*</span></label>
+            <input class="cform-input" id="cf-fname" type="text" placeholder="Marcus">
+          </div>
+          <div class="cform-field">
+            <label class="cform-label" for="cf-lname">Last name <span>*</span></label>
+            <input class="cform-input" id="cf-lname" type="text" placeholder="Rivera">
+          </div>
+          <div class="cform-field">
+            <label class="cform-label" for="cf-email">Email address <span>*</span></label>
+            <input class="cform-input" id="cf-email" type="email" placeholder="marcus@riveraplumbing.com">
+          </div>
+          <div class="cform-field">
+            <label class="cform-label" for="cf-phone">Phone number <span>*</span></label>
+            <input class="cform-input" id="cf-phone" type="tel" placeholder="415-555-0182">
+          </div>
+        </div>
+
+        <hr class="cform-divider">
+
+        <!-- Business info -->
+        <div class="cform-section-title">Your business</div>
+        <div class="cform-grid">
+          <div class="cform-field full">
+            <label class="cform-label" for="cf-bizname">Business name <span>*</span></label>
+            <input class="cform-input" id="cf-bizname" type="text" placeholder="Rivera Plumbing Co.">
+          </div>
+          <div class="cform-field">
+            <label class="cform-label" for="cf-years">Years in business <span>*</span></label>
+            <select class="cform-select" id="cf-years">
+              <option value="" disabled selected>Select one</option>
+              <option>Less than 1 year</option>
+              <option>1–2 years</option>
+              <option>3–5 years</option>
+              <option>6–10 years</option>
+              <option>10+ years</option>
+            </select>
+          </div>
+          <div class="cform-field">
+            <label class="cform-label" for="cf-license">CA Contractors License # <span>*</span></label>
+            <input class="cform-input" id="cf-license" type="text" placeholder="e.g. 847291">
+          </div>
+          <div class="cform-field full">
+            <label class="cform-label" for="cf-area">Primary service area <span>*</span></label>
+            <input class="cform-input" id="cf-area" type="text" placeholder="e.g. San Francisco, Oakland, San Jose, Marin">
+          </div>
+        </div>
+
+        <hr class="cform-divider">
+
+        <!-- Trades -->
+        <div class="cform-section-title">Trades you offer</div>
+        <div class="cform-trades">
+          <label class="cform-trade-check"><input type="checkbox"> Plumbing</label>
+          <label class="cform-trade-check"><input type="checkbox"> Electrical</label>
+          <label class="cform-trade-check"><input type="checkbox"> HVAC</label>
+          <label class="cform-trade-check"><input type="checkbox"> Roofing</label>
+          <label class="cform-trade-check"><input type="checkbox"> Painting</label>
+          <label class="cform-trade-check"><input type="checkbox"> Carpentry</label>
+          <label class="cform-trade-check"><input type="checkbox"> Landscaping</label>
+          <label class="cform-trade-check"><input type="checkbox"> Windows & Doors</label>
+          <label class="cform-trade-check"><input type="checkbox"> General Contracting</label>
+        </div>
+
+        <hr class="cform-divider">
+
+        <!-- Insurance -->
+        <div class="cform-section-title">Insurance & verification</div>
+        <div class="cform-grid">
+          <div class="cform-field">
+            <label class="cform-label" for="cf-insurer">Insurance provider <span>*</span></label>
+            <input class="cform-input" id="cf-insurer" type="text" placeholder="e.g. State Farm, Nationwide">
+          </div>
+          <div class="cform-field">
+            <label class="cform-label" for="cf-coverage">Coverage amount <span>*</span></label>
+            <select class="cform-select" id="cf-coverage">
+              <option value="" disabled selected>Select one</option>
+              <option>$500K per occurrence</option>
+              <option>$1M per occurrence</option>
+              <option>$2M per occurrence</option>
+              <option>$2M+ per occurrence</option>
+            </select>
+          </div>
+          <div class="cform-field full">
+            <label class="cform-label" for="cf-why">Why do you want to join BayVetted? <span>*</span></label>
+            <textarea class="cform-input" id="cf-why" rows="3" placeholder="Tell us a bit about your business and what you're looking for in a lead platform..."></textarea>
+          </div>
+        </div>
+
+        <hr class="cform-divider">
+
+        <!-- Agreement -->
+        <div class="cform-agreement">
+          <input type="checkbox" id="cf-agree">
+          <label for="cf-agree">I confirm that I hold a valid California Contractors License, carry active general liability insurance, and consent to a background check as part of the BayVetted vetting process. I understand that approval is not guaranteed and that BayVetted will review my application within 2 business days.</label>
+        </div>
+
+        <button class="cform-submit" onclick="submitCForm()">Submit my application</button>
+
+        <div class="cform-note">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          Your information is kept private and only used for vetting purposes.
+        </div>
+
+      </div>
+
+      <!-- Success state -->
+      <div class="cform-success" id="cform-success">
+        <div class="cform-success-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1D9E75" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <h3>Application received.</h3>
+        <p>Thanks for applying to BayVetted. We review every application personally and will follow up within 2 business days to discuss next steps.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<script>
+function submitCForm() {
+  const required = ['cf-fname','cf-lname','cf-email','cf-phone','cf-bizname','cf-years','cf-license','cf-area','cf-insurer','cf-coverage','cf-why'];
+  const agree = document.getElementById('cf-agree');
+
+  let missing = false;
+  required.forEach(id => {
+    const el = document.getElementById(id);
+    if (!el || !el.value.trim()) {
+      el.style.borderColor = '#D85A30';
+      missing = true;
+    } else {
+      el.style.borderColor = '';
+    }
+  });
+
+  if (!agree.checked) {
+    agree.parentElement.style.borderColor = '#D85A30';
+    missing = true;
+  } else {
+    agree.parentElement.style.borderColor = '';
+  }
+
+  if (missing) {
+    const firstError = document.querySelector('.cform-input[style*="D85A30"], .cform-select[style*="D85A30"]');
+    if (firstError) firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    return;
+  }
+
+  document.getElementById('cform-fields').style.display = 'none';
+  document.getElementById('cform-success').style.display = 'block';
+  window.scrollTo({ top: document.getElementById('cform-success').offsetTop - 100, behavior: 'smooth' });
+}
+</script>
+
+<!-- ── FINAL CTA ───────────────────────────────── -->
+<section class="section-final">
+  <div class="final-inner">
+    <h2>Your home deserves better than a gamble.</h2>
+    <p>Start your project today and get matched with verified professionals in the Bay Area — free, fast, and with no spam calls.</p>
+    <div class="final-actions">
+      <a href="#get-quote" class="btn-primary">Get a free quote</a>
+      <a href="#apply" class="btn-outline">I'm a contractor</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ──────────────────────────────────── -->
+<footer>
+  <div class="section-inner">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand-name">Bay<span>Vetted</span></div>
+        <p class="footer-tagline">Bay Area vetted. Bay Area trusted.<br>The Bay Area's most trusted home services marketplace.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Homeowners</h5>
+        <ul>
+          <li><a href="#">Get a quote</a></li>
+          <li><a href="#">Browse trades</a></li>
+          <li><a href="#">How it works</a></li>
+          <li><a href="#">Contractor vetting</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Contractors</h5>
+        <ul>
+          <li><a href="#">Apply to join</a></li>
+          <li><a href="#">Pricing</a></li>
+          <li><a href="#">Pro dashboard</a></li>
+          <li><a href="#">Success stories</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Company</h5>
+        <ul>
+          <li><a href="#">About us</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 BayVetted Home Services, Inc. All rights reserved.</p>
+      <div class="footer-legal">
+        <a href="#">Privacy policy</a>
+        <a href="#">Terms of service</a>
+        <a href="#">Cookie settings</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
